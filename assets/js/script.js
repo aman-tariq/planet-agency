@@ -14,14 +14,17 @@ const addEvent = (elem, type, callback) => {
 /**
  * Close navbar on link click
  */
-const navbarLinks = document.querySelectorAll('[data-nav-link]');
-const closeNavbar = () => {
-  const navbar = document.querySelector('.navbar-collapse');
-  if (navbar && navbar.classList.contains('show')) {
-    bootstrap.Collapse.getInstance(navbar).hide();
-  }
-};
-addEvent(navbarLinks, 'click', closeNavbar);
+  // Collapse navbar after clicking any nav link (mobile)
+document.querySelectorAll('[data-nav-link]').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbar = document.querySelector('.navbar-collapse');
+    if (navbar && navbar.classList.contains('show')) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbar) || new bootstrap.Collapse(navbar, { toggle: false });
+      bsCollapse.hide();
+    }
+  });
+});
+
 
 /**
  * Add active class to header on scroll + change nav-link color

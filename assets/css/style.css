@@ -396,7 +396,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/about-banner.png');
+  background-image: url('../images/hero-banner.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -780,11 +780,15 @@ body {
 
 .footer {
   color: white;
-  background: var(--dark-gray);
+  background: rgba(20, 20, 20, 0.842);
+}
+
+.footer-list-title{
+  color: var(--orange);
 }
 
 .footer-top {
-  padding: 40px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--light-gray);
   border-bottom: 1px solid var(--light-gray);
 }
@@ -821,12 +825,13 @@ body {
   padding: 5px 0;
 }
 
-.footer-list-title {
-  margin-bottom: 15px;
-}
 
 .copyright {
-  padding: 20px 0;
+  padding: 20px 0;  
+}
+.copyright a{
+  color: var(--orange);
+  font-weight: var(--fw-medium);
 }
 
 /*-----------------------------------*\
