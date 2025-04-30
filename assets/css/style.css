@@ -228,7 +228,7 @@ body {
     height: 0;
     margin-left: 8px;
     vertical-align: middle;
-    border-top: 5px solid var(--dark-gray);
+    border-top: 5px solid ;
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     transition: var(--transition);
@@ -287,6 +287,9 @@ body {
     background: var(--orange-light);
     color: var(--orange);
   }
+}
+.hero-client{
+  border-radius: 50px;
 }
 
 /* Mobile Sidebar */
@@ -419,23 +422,45 @@ body {
   position: relative;
   z-index: 2;
 }
-
-.section.hero .hero-content {
-  color: var(--white); /* White text for better contrast */
+.scroll-animate {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Shorter duration, custom easing */
+  will-change: transform, opacity;
 }
 
-.section.hero .hero-content .section-title,
-.section.hero .hero-content .section-text {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
-  color: var(--white);
+.scroll-animate-left {
+  transform: translateX(-100px);
 }
 
-.section.service {
-  position: relative;
-  z-index: 3;
+.animate-visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
+.hero-text{
+  color: rgba(255, 255, 255, 0.63)!important;
+}
+.fade-animate {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
 
+.fade-visible {
+  opacity: 1 !important;
+}
+
+.scroll-heading {
+  transition: transform 0.3s ease-out, opacity 0.5s ease-out;
+  transform: translateY(20px); /* Initial position */
+  opacity: 0; /* Start with the heading invisible */
+}
+
+.scroll-heading.visible {
+  opacity: 1; 
+  transform: translateY(0); 
+}
 
 /*-----------------------------------*\
   #SERVICE
@@ -689,17 +714,9 @@ body {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 1200px;
   margin: 20px;
 }
 
-#stats h2 {
-  font-size: 2.5em;
-  color: #1e3c72;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
 
 .stats-container {
   display: flex;

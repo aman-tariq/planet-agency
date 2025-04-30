@@ -44,14 +44,14 @@
           <!-- Navbar Links -->
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-white">
-              <li class="nav-item">
-                <a href="#home" class="nav-link text-white" data-nav-link>Home</a>
+              <li class="nav-item mx-2">
+                <a href="#home" class="nav-link text-white mx-2" data-nav-link>Home</a>
               </li>
               <li class="nav-item">
-                <a href="#about" class="nav-link text-white" data-nav-link>About</a>
+                <a href="#about" class="nav-link text-white mx-2" data-nav-link>About</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="servicesDropdown" role="button"
+                <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="servicesDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
                   Services
                 </a>
@@ -67,10 +67,10 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#blog" class="nav-link text-white" data-nav-link>Blog</a>
+                <a href="#blog" class="nav-link text-white mx-2" data-nav-link>Blog</a>
               </li>
               <li class="nav-item">
-                <a href="#projects" class="nav-link text-white" data-nav-link>Projects</a>
+                <a href="#projects" class="nav-link text-white mx-2" data-nav-link>Projects</a>
               </li>
             </ul>
           </div>
@@ -88,22 +88,23 @@
       <section class="section hero" id="home" aria-label="home">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-lg-6 hero-content">
-              <h1 class="h1 section-title">
+            <div class="col-lg-6 hero-content scroll-animate scroll-animate-left">
+              <h1 class="h1 section-title text-white">
                 Planet <span class="span">Marketing</span> Agency
               </h1>
-              <p class="section-text">
+              <p class="section-text hero-text">
                 Elevate your brand with targeted marketing strategies and innovative designs tailored to your audience.
               </p>
               <button class="btn btn-secondary mt-3">Get Started</button>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 scroll-animate">
               <figure class="hero-banner has-shape">
-                <img src="./assets/images/hero-banner.png" class="img-fluid" alt="hero banner">
+                <img src="./assets/images/hero-client.jpg" class="img-fluid hero-client" alt="hero banner">
                 <img src="./assets/images/hero-shape-1.svg" width="106" height="78" alt="" class="shape">
               </figure>
             </div>
           </div>
+          
         </div>
       </section>
 
@@ -111,18 +112,18 @@
       <section class="section service has-shape" id="services" aria-label="service">
         <div class="container">
           <!-- <div class="title-wrapper text-center mb-5"> -->
-          <h2 class="h2 section-title text-center">
+          <h2 class="h2 section-title text-center scroll-heading">
             Our <span class="text-orange d-inline">Marketing</span> Services
           </h2>
 
 
 
-          <p class="section-text text-center">
+          <p class="section-text text-center fade-animate">
             We provide comprehensive marketing solutions to boost your brand's visibility and engagement.
           </p>
           <!-- </div> -->
 
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 fade-animate">
             <div class="col">
               <div class="service-card h-100">
                 <figure class="card-icon">
@@ -240,14 +241,14 @@
       <!-- about -->
       <section class="section about" id="about" aria-label="about">
         <div class="container">
-          <div class="row align-items-center">
+          <div class="row align-items-center fade-animate">
             <div class="col-lg-6 order-lg-2">
               <figure class="about-banner has-shape">
                 <img src="./assets/images/about-banner.png" class="img-fluid" loading="lazy" alt="about banner">
                 <img src="./assets/images/banner-shape.svg" width="108" height="86" loading="lazy" alt="" class="shape">
               </figure>
             </div>
-            <div class="col-lg-6 about-content">
+            <div class="col-lg-6 about-content fade-animate">
               <h2 class="h2 section-title">
                 Empowering <span class="span">Brands</span> Worldwide
               </h2>
@@ -268,7 +269,7 @@
       <section class="section blog" id="blog" aria-label="blog">
         <div class="container">
           <div class="title-wrapper mb-5 text-center">
-            <h2 class="h2 section-title text-center">
+            <h2 class="h2 section-title text-center scroll-heading">
               Marketing <span class="text-orange d-inline">Insights</span>
             </h2>
 
@@ -366,7 +367,7 @@
         </div>
       </section>
       <section id="stats">
-        <h2>Our Impact</h2>
+        <h2 class="h2 section-title text-center scroll-heading mb-5">Our <span class="text-orange d-inline"> Impact</span></h2>
         <div class="stats-container">
             <div class="stat">
                 <h3><span class="counter" data-target="15000">0</span><span class="plus">+</span></h3>
@@ -391,7 +392,7 @@
       <section class="section new-projects" id="new-projects" aria-label="new-projects">
         <div class="container">
           <div class="title-wrapper text-center mb-5">
-            <h2 class="h2 section-title">
+            <h2 class="h2 section-title scroll-heading">
               Our Latest <span class="text-orange d-inline">Projects</span>
             </h2>
             <p class="section-text">
@@ -611,25 +612,6 @@
   
 
   <!-- Bootstrap JS -->
-  <script>
-    document.querySelectorAll('.counter').forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      let count = 0;
-      const speed = 100; // Adjust for animation speed
-      const increment = target / speed;
-
-      const updateCounter = () => {
-        count += increment;
-        if (count < target) {
-          counter.innerText = Math.ceil(count).toLocaleString();
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.innerText = target.toLocaleString();
-        }
-      };
-      updateCounter();
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- custom js -->
   <script src="assets/js/script.js" defer></script>
